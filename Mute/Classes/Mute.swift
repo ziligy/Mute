@@ -3,6 +3,7 @@
 //  Mute
 //
 //  Created by Akram Hussein on 08/09/2017.
+//  Jeff Greenberg changed 8/20/2018
 //
 
 import Foundation
@@ -108,12 +109,12 @@ public class Mute: NSObject {
         // Notifications
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(Mute.didEnterBackground(_:)),
-                                               name: NSNotification.Name.UIApplicationDidEnterBackground,
+                                               name: NSNotification.Name.NSExtensionHostDidEnterBackground, // JG Changed
                                                object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(Mute.willEnterForeground(_:)),
-                                               name: NSNotification.Name.UIApplicationWillEnterForeground,
+                                               name: NSNotification.Name.NSExtensionHostWillEnterForeground, // JG Changed
                                                object: nil)
     }
 
